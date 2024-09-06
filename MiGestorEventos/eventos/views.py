@@ -21,4 +21,8 @@ def crear_evento(request):
         form = EventoForm()
     return render(request, 'eventos/crear_evento.html', {'form': form})
 
+from django.contrib.auth.decorators import login_required
 
+
+def editar_evento(request, pk):
+    evento = get_object_or_404(Evento, pk=pk)

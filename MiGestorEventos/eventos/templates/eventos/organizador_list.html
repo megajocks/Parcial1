@@ -1,0 +1,8 @@
+
+<h1>Lista de Organizadores</h1>
+<ul>
+  {% for organizador in object_list %}
+    <li>{{ organizador.nombre }}</li>
+  {% endfor %}
+</ul>
+<a href="{% url 'crear_organizador' %}">Crear Organizador</a>
