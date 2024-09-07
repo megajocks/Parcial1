@@ -1,6 +1,10 @@
 from django.urls import path
 from . import views
 
+
+
 urlpatterns = [
-    path('', views.index, name='index'),  # Define una ruta para la vista index
+   
+    path('', views.lista_eventos, name='lista_eventos'),
+     path('crear/', views.crear_evento, name='crear_evento'),
 ]
