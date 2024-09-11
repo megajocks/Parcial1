@@ -1,14 +1,23 @@
+{% load static %}
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Eventos</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Eventos</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
 </head>
 <body>
-    <h1>Eventos</h1>
+    <h1>Lista de Eventos</h1>
+    
+  
     <ul>
         {% for evento in object_list %}
-            <li>{{ evento.nombre }} - Organizador: {{ evento.organizador.nombre }}</li>
+            <li>{{ evento.nombre }}</li>
+        {% empty %}
+            <li>No hay eventos disponibles.</li>
         {% endfor %}
     </ul>
 </body>
 </html>
+

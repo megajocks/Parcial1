@@ -3,9 +3,13 @@ from . import views
 from .views import OrganizadorListView, OrganizadorCreateView, EventoListView, EventoCreateView, EventoUpdateView
 from django.contrib.auth import views as auth_views
 from .views import SignUpView 
+from .views import home  
+from .views import HomeView, MenuView
 
 
 urlpatterns = [
+    path('menu/', MenuView.as_view(), name='menu'), 
+    path('', HomeView.as_view(), name='home'), 
     path('organizadores/', views.OrganizadorListView.as_view(), name='organizadores_list'),
     path('organizadores/crear/', views.OrganizadorCreateView.as_view(), name='organizadores_create'),
     path('eventos/', views.EventoListView.as_view(), name='eventos_list'),

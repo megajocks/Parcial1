@@ -1,0 +1,25 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú Principal</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <h1>Menú Principal</h1>
+    <nav>
+        <ul>
+            <li><a href="{% url 'home' %}">Inicio</a></li>
+            <li><a href="{% url 'organizadores_list' %}">Listar Organizadores</a></li>
+            <li><a href="{% url 'eventos_list' %}">Listar Eventos</a></li>
+			<li><a href="{% url 'organizadores_create' %}">Crear Organizadores</a></li>
+			<li><a href="{% url 'eventos_create' %}">Crear Eventos</a></li>
+			
+            <li><a href="{% url 'signup' %}">Registrarse</a></li>
+            <li><a href="{% url 'login' %}">Iniciar Sesión</a></li>
+        </ul>
+    </nav>
+</body>
+</html>
