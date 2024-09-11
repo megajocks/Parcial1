@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Organizadores</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <h1>Lista de Organizadores</h1>
+    <a href="{% url 'organizadores_create' %}">Crear Nuevo Organizador</a>
+    <ul>
+        {% for organizador in object_list %}
+            <li>{{ organizador.nombre }}</li>
+        {% empty %}
+            <li>No hay organizadores registrados.</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
